@@ -1,0 +1,22 @@
+﻿@model Mvc_Kelime_Ceviri_Uygulamasi.Models.Siniflar.Kelimeler
+@{
+    ViewBag.Title = "KelimeCevir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>English - Türkçe</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.English)
+    @Html.TextBoxFor(x => x.English, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-info">Translate</button>
+</form>
+
+<br />
+<h3>Result:</h3>
+<p>@ViewBag.TurkceKelime</p>
+

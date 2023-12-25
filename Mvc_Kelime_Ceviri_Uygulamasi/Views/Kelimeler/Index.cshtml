@@ -1,0 +1,50 @@
+﻿@using Mvc_Kelime_Ceviri_Uygulamasi.Models.Siniflar
+@model List<Kelimeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+
+@using (Html.BeginForm("Index", "Kelimeler", FormMethod.Get))
+{
+    <p>
+        Kelime :@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+
+    </p>
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>English</th>
+        <th>Türkçe</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.id</td>
+            <td>@k.English</td>
+            <td>@k.Turkce</td>
+
+            <td><a href="/Kelimeler/KelimeSil/@k.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kelimeler/KelimeGetir/@k.id" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+
+    }
+
+</table>
+
+<a href="/Kelimeler/KelimeEkle" class="btn btn-info">Kelime Ekle</a>
+
+

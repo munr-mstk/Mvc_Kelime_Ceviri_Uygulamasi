@@ -1,0 +1,17 @@
+﻿@model Mvc_Kelime_Ceviri_Uygulamasi.Models.Siniflar.Yapilacaklar
+@{
+    ViewBag.Title = "YapilacakEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Not Ekle</h2>
+<br />
+<form class="form-group" method="post">
+   
+    @Html.TextAreaFor(x => x.Baslik, new { @class = "form-control", rows = 4 })
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

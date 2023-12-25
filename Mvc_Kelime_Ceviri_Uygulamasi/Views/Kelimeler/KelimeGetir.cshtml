@@ -1,0 +1,26 @@
+﻿@model Mvc_Kelime_Ceviri_Uygulamasi.Models.Siniflar.Kelimeler
+@{
+    ViewBag.Title = "KelimeGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Depatman Güncelleme</h2>
+<br />
+@using (Html.BeginForm("KelimeGuncelle", "Kelimeler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.id)
+        @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+        @Html.LabelFor(x => x.English)
+        @Html.TextBoxFor(x => x.English, new { @class = "form-control" })
+        @Html.LabelFor(x => x.Turkce)
+        @Html.TextBoxFor(x => x.Turkce, new { @class = "form-control" })
+
+
+
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}
+

@@ -1,0 +1,23 @@
+﻿@model Mvc_Kelime_Ceviri_Uygulamasi.Models.Siniflar.Kelimeler
+@{
+    ViewBag.Title = "KelimeEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kelime Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.English)
+    @Html.TextBoxFor(x => x.English, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Turkce)
+    @Html.TextBoxFor(x => x.Turkce, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+
+</form>
+
+
+
